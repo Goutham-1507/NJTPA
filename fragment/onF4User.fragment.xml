@@ -1,0 +1,82 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout" xmlns="sap.m"
+	xmlns:fb="sap.ui.comp.filterbar">
+	<TableSelectDialog id="idUserVH" noDataText="No Data" title="Responsible Contacts" search="onSearchUser" confirm="onUserVHConfirm1"
+		cancel="onUserVHConfirm1" showClearButton="true" items="{ path : '/UserSet', sorter : { path : 'Bname', descending : false }}"
+		contentWidth="30%">
+		<columns>
+			<Column minScreenWidth="Tablet" demandPopin="true">
+				<Text text="Name"/>
+			</Column>
+			<Column minScreenWidth="Tablet" demandPopin="true">
+				<Text text="First Name"/>
+			</Column>
+			<Column minScreenWidth="Tablet" demandPopin="true">
+				<Text text="Last Name"/>
+			</Column>
+			<Column minScreenWidth="Tablet" demandPopin="true" visible="false">
+				<Text text="Email"/>
+			</Column>
+			<!--<Column minScreenWidth="Tablet" demandPopin="true">-->
+			<!--	<Text text="Cell"/>-->
+			<!--</Column>-->
+			<Column minScreenWidth="Tablet" demandPopin="true" visible="false">
+				<Text text="Telephone"/>
+			</Column>
+		</columns>
+		<ColumnListItem>
+			<Text text="{Bname}"/>
+			<Text text="{NameFirst}"/>
+			<Text text="{NameLast}"/>
+			<Text text="{SmtpAddr}"/>
+			<!--<Text text="{Cell}"/>-->
+			<Text text="{TelNumber}"/>
+		</ColumnListItem>
+	</TableSelectDialog>
+</core:FragmentDefinition>
+<!--<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout" xmlns="sap.m">-->
+<!--	<Dialog class="sapUiSizeCompact sapUiPopupWithPadding" contentWidth="50%" title="" showHeader="true">-->
+<!--		<content>-->
+<!--			<f:SimpleForm minWidth="1024px" maxContainerCols="6" layout="ResponsiveGridLayout" labelSpanL="4" labelSpanM="4" emptySpanL="0"-->
+<!--				emptySpanM="0" columnsL="2" columnsM="2">-->
+<!--				<f:content>-->
+					<!--<core:Title text="Search Criteria" id="EmpSC" level="H4"/>-->
+					<!--<Label text="Employee Number" class="LabelWrap LabelPaddingTop"/>-->
+					<!--<Input class="LabelWrap LabelPaddingTop" value="{oJModel>/EmpNum}" liveChange="onEmpNumber"/>-->
+					<!--<Label text="First Name" class="LabelWrap LabelPaddingTop"/>-->
+					<!--<Input class="LabelWrap LabelPaddingTop" value="{oJModel>/EmpFName}" liveChange="onEmpFName"/>-->
+					<!--<Label text="Last Name" class="LabelWrap LabelPaddingTop"/>-->
+					<!--<Input class="LabelWrap LabelPaddingTop" value="{oJModel>/EmpLName}" liveChange="onEmpLName"/>-->
+					<!--<Button id="EmpSrch" text="Search" type="Emphasized" press="handleEmpSearch"/>-->
+<!--				</f:content>-->
+<!--			</f:SimpleForm>-->
+<!--			<Table items="{/UserSet}" growing="true" growingThreshold="10" growingScrollToLoad="false">-->
+<!--				<headerToolbar>-->
+<!--					<Toolbar>-->
+						<!--<Title text="Search Result" level="H2"/>-->
+<!--					</Toolbar>-->
+<!--				</headerToolbar>-->
+<!--				<columns>-->
+<!--					<Column minScreenWidth="Tablet" demandPopin="true">-->
+<!--						<Text text="Name"/>-->
+<!--					</Column>-->
+<!--					<Column minScreenWidth="Tablet" demandPopin="true">-->
+<!--						<Text text="First Name"/>-->
+<!--					</Column>-->
+<!--					<Column minScreenWidth="Tablet" demandPopin="true">-->
+<!--						<Text text="Last Name"/>-->
+<!--					</Column>-->
+<!--				</columns>-->
+<!--				<items>-->
+<!--					<ColumnListItem type="Navigation" press="handleSelectedUser">-->
+<!--						<Text text="{Bname}"/>-->
+<!--						<Text text="{NameFirst}"/>-->
+<!--						<Text text="{NameLast}"/>-->
+<!--					</ColumnListItem>-->
+<!--				</items>-->
+<!--			</Table>-->
+<!--		</content>-->
+<!--		<endButton>-->
+<!--			<Button press="handleUserClose" text="Cancel"/>-->
+<!--		</endButton>-->
+<!--	</Dialog>-->
+<!--</core:FragmentDefinition>-->

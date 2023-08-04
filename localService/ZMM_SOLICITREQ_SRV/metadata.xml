@@ -1,0 +1,125 @@
+<edmx:Edmx xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+	xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData" Version="1.0">
+	<edmx:Reference xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"
+		Uri="./IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='DVTCLNT900_TRUST')/$value">
+		<edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/>
+	</edmx:Reference>
+	<edmx:DataServices m:DataServiceVersion="2.0">
+		<Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" Namespace="ZMM_SOLICITREQ_SRV" xml:lang="en" sap:schema-version="1">
+			<EntityType Name="Return" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="Message"/>
+				</Key>
+				<Property Name="Message" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/>
+			</EntityType>
+			<EntityType Name="ZC_SOLICITATION_REQUESTType" sap:label="Solicitation Request Details View" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="RequestNumber"/>
+				</Key>
+				<Property Name="RequestNumber" Type="Edm.String" Nullable="false" MaxLength="10" sap:display-format="UpperCase"
+					sap:label="Solicit Req. Number"/>
+				<Property Name="SolicitationType" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Solicitation Type"/>
+				<Property Name="Status" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="SolicitationReq Stat"/>
+				<Property Name="MandatoryMeetings" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Mandatory Meetings"/>
+				<Property Name="MeetingsDate" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Proposed date"/>
+				<Property Name="MeetingTime" Type="Edm.Time" Precision="0" sap:label="Mandatory meeting Ti"/>
+				<Property Name="RoomReserved" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Has room been reserv"/>
+				<Property Name="MeetingsLocation" Type="Edm.String" MaxLength="40" sap:display-format="UpperCase" sap:label="Location"/>
+				<Property Name="JobSiteWalk" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Jobsite Walk"/>
+				<Property Name="JobSiteDate" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Proposed date"/>
+				<Property Name="JobSiteLocation" Type="Edm.String" MaxLength="40" sap:display-format="UpperCase" sap:label="Location"/>
+				<Property Name="Title" Type="Edm.String" MaxLength="80" sap:display-format="UpperCase" sap:label="Solicit Req. Title"/>
+				<Property Name="JobSiteTime" Type="Edm.Time" Precision="0" sap:label="Jobsite time"/>
+				<Property Name="Service" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="The Solicitation is"/>
+				<Property Name="OtherGroup" Type="Edm.String" MaxLength="40" sap:display-format="UpperCase" sap:label="Other Group"/>
+				<Property Name="ContractorLicense" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Will a contractor’s"/>
+				<Property Name="Type" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Type (A, B, C)"/>
+				<Property Name="IfTypeC" Type="Edm.String" MaxLength="20" sap:display-format="UpperCase" sap:label="If Type C"/>
+				<Property Name="Wages" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Will payment of prev"/>
+				<Property Name="BidBond" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Do you require a Bid"/>
+				<Property Name="ProjectEstimate" Type="Edm.Decimal" Precision="13" Scale="2" sap:label="project estimate?"/>
+				<Property Name="ContractBegin" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="What is the expected"/>
+				<Property Name="PurGroup" Type="Edm.String" MaxLength="3" sap:display-format="UpperCase" sap:label="Purchasing Group"/>
+				<Property Name="ContractEnd" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="What is the expected"/>
+				<Property Name="DigitalForm" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Information in Digit"/>
+				<Property Name="SetsSpec" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Will we be changing"/>
+				<Property Name="ProjectBudget" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Has this project and"/>
+				<Property Name="Clarify" Type="Edm.String" MaxLength="40" sap:display-format="UpperCase" sap:label="If Yes Clarify"/>
+				<Property Name="FundingSource" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Funding Source/Other"/>
+				<Property Name="OtherFunding" Type="Edm.String" MaxLength="20" sap:display-format="UpperCase" sap:label="Identify the program"/>
+				<Property Name="ObtainFund" Type="Edm.String" MaxLength="40" sap:display-format="UpperCase" sap:label="Source to obtain fun"/>
+				<Property Name="AmericaAct" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Buy America act"/>
+				<Property Name="Requestor" Type="Edm.String" MaxLength="20" sap:display-format="UpperCase" sap:label="Requestor"/>
+				<Property Name="Requirement" Type="Edm.String" MaxLength="40" sap:display-format="UpperCase" sap:label="Does this solicitati"/>
+				<Property Name="Questions" Type="Edm.String" MaxLength="40" sap:display-format="UpperCase" sap:label="Questions &amp; Concerns"/>
+				<Property Name="PurchasingNumber" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Purchasing Document"/>
+				<Property Name="ObjectPerson" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:label="Created By"/>
+				<Property Name="RequestBehalf" Type="Edm.String" MaxLength="24" sap:display-format="UpperCase" sap:label="Request on Behalf"/>
+				<Property Name="GroupDescription" Type="Edm.String" MaxLength="80" sap:display-format="UpperCase" sap:label="Description"/>
+				<Property Name="VendorNumber" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Vendor"/>
+				<Property Name="VendorName" Type="Edm.String" MaxLength="35" sap:label="Name"/>
+				<Property Name="ContactPerson" Type="Edm.String" MaxLength="20" sap:display-format="UpperCase" sap:label="Contact Person"/>
+				<Property Name="Mobile" Type="Edm.String" MaxLength="2" sap:display-format="UpperCase" sap:label="Mobile No:"/>
+				<Property Name="Approver" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:label="Approver"/>
+				<Property Name="Address" Type="Edm.String" MaxLength="40" sap:display-format="UpperCase" sap:label="Address"/>
+				<Property Name="City" Type="Edm.String" MaxLength="24" sap:display-format="UpperCase" sap:label="City, Street &amp;Pin"/>
+				<Property Name="Value" Type="Edm.Decimal" Precision="12" Scale="2" sap:label="Value:"/>
+				<Property Name="Expenses" Type="Edm.Decimal" Precision="12" Scale="2" sap:label="Expenses"/>
+				<Property Name="TotalValue" Type="Edm.Decimal" Precision="12" Scale="2" sap:label="Total Value"/>
+				<Property Name="BoardMeeting" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Date of Board meetin"/>
+				<Property Name="ContractStartDate" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Contract Start Date:"/>
+				<Property Name="ContractEndDate" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Contract End Date:"/>
+				<Property Name="MwaRequest" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Is this request unde"/>
+				<Property Name="MwaNumber" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="MWA No:"/>
+				<Property Name="EVARunDate" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="EVA Run Date"/>
+				<Property Name="MwaCopy" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Copy of MWA attached"/>
+				<Property Name="MwaContract" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Does the value of th"/>
+				<Property Name="CostType" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:label="COST TYPE"/>
+				<Property Name="Costcenter" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Cost Center"/>
+				<Property Name="OrderNumber" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:label="Order"/>
+				<Property Name="Project" Type="Edm.String" MaxLength="12" sap:display-format="NonNegative" sap:label="Project"/>
+				<Property Name="NetworkNumber" Type="Edm.String" MaxLength="12" sap:display-format="NonNegative" sap:label="Network No"/>
+				<Property Name="Activity" Type="Edm.String" MaxLength="12" sap:display-format="NonNegative" sap:label="Activity"/>
+				<Property Name="RequisitionNumber" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Purchase Requisition"/>
+				<Property Name="GlAccount" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="G/L Account"/>
+				<Property Name="Department" Type="Edm.String" MaxLength="30" sap:display-format="UpperCase" sap:label="Department"/>
+				<Property Name="Dollar" Type="Edm.String" MaxLength="12" sap:display-format="NonNegative" sap:label="Total Value ($)"/>
+				<Property Name="Regulatory" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Regulatory/Complianc"/>
+				<Property Name="SoleSource" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Will a Sole-Source j"/>
+				<Property Name="AddApprover" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Add Approver"/>
+				<Property Name="ApproverTitle" Type="Edm.String" MaxLength="40" sap:display-format="UpperCase" sap:label="Approver Title"/>
+				<Property Name="DateReceived" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Date Received"/>
+				<Property Name="DateApproved" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Date Approved"/>
+				<Property Name="Comments" Type="Edm.String" MaxLength="256" sap:display-format="UpperCase" sap:label="Comments"/>
+				<Property Name="Attachments" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Attachments"/>
+				<Property Name="AttachmentsName" Type="Edm.String" MaxLength="40" sap:display-format="UpperCase" sap:label="Name of the Attachme"/>
+				<Property Name="ValidDate" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Quotation Valid from"/>
+				<Property Name="UploadedBy" Type="Edm.String" MaxLength="40" sap:display-format="UpperCase" sap:label="Uploaded By"/>
+				<Property Name="OrderDate" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Purchase Order Date"/>
+				<Property Name="Amendment" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Amendment"/>
+				<Property Name="Changetype" Type="Edm.String" MaxLength="40" sap:display-format="UpperCase" sap:label="Change Type Text"/>
+				<Property Name="ChangeOrder" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Change Order"/>
+				<Property Name="NoCost" Type="Edm.Decimal" Precision="12" Scale="2" sap:label="No Cost"/>
+				<Property Name="NoChange" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="No Change"/>
+				<Property Name="QueriesPhone" Type="Edm.String" MaxLength="15" sap:display-format="NonNegative" sap:label="Queries phone"/>
+				<Property Name="QueriesExt" Type="Edm.String" MaxLength="4" sap:display-format="NonNegative" sap:label="Queries Ext"/>
+				<Property Name="RepairServices" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Are these constructi"/>
+				<Property Name="ProjectID" Type="Edm.String" MaxLength="40" sap:display-format="UpperCase" sap:label="Project ID"/>
+				<Property Name="SoleBrand" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Will a Sole-Brand ju"/>
+				<Property Name="ComparableModels" Type="Edm.String" MaxLength="256" sap:display-format="UpperCase" sap:label="What other comparabl"/>
+			</EntityType>
+			<EntityContainer Name="ZMM_SOLICITREQ_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
+				<EntitySet Name="ReturnCollection" EntityType="ZMM_SOLICITREQ_SRV.Return" sap:content-version="1"/>
+				<EntitySet Name="ZC_SOLICITATION_REQUEST" EntityType="ZMM_SOLICITREQ_SRV.ZC_SOLICITATION_REQUESTType" sap:creatable="false"
+					sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+				<FunctionImport Name="AddApprover" ReturnType="ZMM_SOLICITREQ_SRV.Return" EntitySet="ReturnCollection" m:HttpMethod="GET">
+					<Parameter Name="WorkItemID" Type="Edm.String" Mode="In"/>
+					<Parameter Name="UserName" Type="Edm.String" Mode="In"/>
+				</FunctionImport>
+			</EntityContainer>
+			<atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="self" href="./sap/ZMM_SOLICITREQ_SRV/$metadata"/>
+			<atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="latest-version" href="./sap/ZMM_SOLICITREQ_SRV/$metadata"/>
+		</Schema>
+	</edmx:DataServices>
+</edmx:Edmx>

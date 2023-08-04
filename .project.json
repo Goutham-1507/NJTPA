@@ -1,0 +1,27 @@
+{
+  "mockpreview": {
+    "mockUri": "/sap/opu/odata/sap/ZMM_SERVAMND_REQ_SRV/",
+    "metadataFilePath": "localService/ZMM_SERVAMND_REQ_SRV/metadata.xml",
+    "loadJSONFiles": false,
+    "loadCustomRequests": false,
+    "mockRequestsFilePath": ""
+  },
+  "deploy": {
+    "destination": "FDV",
+    "name": "ZSRVAMDRQ"
+  },
+  "translation": {
+    "translationDomain": "",
+    "supportedLanguages": "",
+    "defaultLanguage": "",
+    "defaultI18NPropertyFile": "",
+    "resourceModelName": ""
+  },
+  "generation": [
+    {
+      "templateId": "servicecatalog.connectivityComponent",
+      "templateVersion": "0.0.0",
+      "dateTimeStamp": "Thu, 21 Oct 2021 09:24:19 GMT"
+    }
+  ]
+}

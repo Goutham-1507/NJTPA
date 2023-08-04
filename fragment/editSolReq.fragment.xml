@@ -1,0 +1,343 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout" xmlns:u="sap.ui.unified" xmlns="sap.m"
+	xmlns:f="sap.ui.layout.form" xmlns:ui="sap.ui.richtexteditor">
+	<VBox class="sapUiSmallMargin">
+		<f:SimpleForm  editable="true" layout="ResponsiveGridLayout" title="Basic Data" labelSpanXL="4" labelSpanL="4"
+			labelSpanM="12" labelSpanS="12" adjustLabelSpan="true" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="2"
+			columnsL="2" columnsM="2" singleContainerFullSize="false">
+			<f:content>
+				<core:Title/>
+				<Label text="{i18n>SolicitationTitle}" required="true"/>
+				<Input value="{oEditSolReq>/Title}"/>
+				<Label text="{i18n>Date}"/>
+				<DatePicker 
+					value="{path: '{oEditSolReq>/RequestDate}', type: 'sap.ui.model.type.DateTime', formatOptions: {UTC: true}, constraints: { displayFormat: 'Date' } }"
+					displayFormat="MM/dd/yyyy" change="onReqDateChang"/>
+				<Label text="{i18n>SolicitationType}"/>
+				<Select items="{ path: '/SolicitationTypeSet', sorter: { path: 'Soltyp' } }" forceSelection='false' change="onSoltyp">
+					<core:Item key="{Soltyp}" text="{Soltyp}"/>
+				</Select>
+				<core:Title/>
+				<Label text="From" required="true"/>
+				<Input value="{oEditSolReq>/Requestor}"/>
+				<Label text="{i18n>Department}"/>
+				<Select  items="{ path: '/DepartmentsSet', sorter: { path: 'Dptnm' } }" forceSelection='false' change="onDept">
+					<core:Item key="{Dptnm}" text="{Dptnm}"/>
+				</Select>
+				<Label text="Request Number"/>
+				<Input editable='false' value="{oEditSolReq>/RequestNumber}"/>
+			</f:content>
+		</f:SimpleForm>
+		<f:SimpleForm editable="true" layout="ResponsiveGridLayout" title="1" labelSpanXL="4" labelSpanL="4" labelSpanM="12" labelSpanS="12"
+			adjustLabelSpan="true" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="2"
+			singleContainerFullSize="false">
+			<f:content>
+				<Label text="Proposed Due Date"/>
+				<DatePicker
+					value="{path: '{oEditSolReq>/ProposedDueDate}', type: 'sap.ui.model.type.DateTime', formatOptions: {UTC: true}, constraints: { displayFormat: 'Date' } }"
+					displayFormat="MM/dd/yyyy" change="onProposedDueDateChang"/>
+			</f:content>
+		</f:SimpleForm>
+		<f:SimpleForm editable="true" layout="ResponsiveGridLayout" title="2" labelSpanXL="4" labelSpanL="4" labelSpanM="12" labelSpanS="12"
+			adjustLabelSpan="true" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="2"
+			singleContainerFullSize="false">
+			<f:content>
+				<core:Title/>
+				<Label text="Mandatory Meeting" required="true"/>
+				<RadioButtonGroup columns="2" selectedIndex="2">
+					<buttons>
+						<RadioButton  text="Yes" selected="true"/>
+						<RadioButton  text="No"/>
+					</buttons>
+				</RadioButtonGroup>
+				<Label text="Has Room been Reserverd?" required="true"/>
+				<RadioButtonGroup columns="2" selectedIndex="2">
+					<buttons>
+						<RadioButton text="Yes" selected="true"/>
+						<RadioButton text="No"/>
+					</buttons>
+				</RadioButtonGroup>
+				<Label text="{i18n>Location}"/>
+				<ui:Richtexteditor />
+				<!--<Input/>-->
+				<core:Title/>
+				<Label text="Proposed Date"/>
+				<DatePicker class="sapUiSmallMarginBottom"
+					value="{path: '{oEditSolReq>/MeetingsDate}', type: 'sap.ui.model.type.DateTime', formatOptions: {UTC: true}, constraints: { displayFormat: 'Date' } }"
+					displayFormat="MM/dd/yyyy" change="onMeetingDateChang"/>
+				<Label text="Time"/>
+				<TimePicker value="{path: '{oEditSolReq>/MeetingsTime}', constraints: { displayFormat: 'Time' } }" displayFormat="HH:mm:ss"
+					change="onMeetingTimeChang"/>
+			</f:content>
+		</f:SimpleForm>
+		<f:SimpleForm editable="true" layout="ResponsiveGridLayout" title="3" labelSpanXL="4" labelSpanL="4" labelSpanM="12" labelSpanS="12"
+			adjustLabelSpan="true" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="2"
+			singleContainerFullSize="false">
+			<f:content >
+				<core:Title/>
+				<Label text="Jobsite Walk" required="true"/>
+				<RadioButtonGroup columns="2" selectedIndex="2">
+					<buttons>
+						<RadioButton text="Yes" selected="true"/>
+						<RadioButton text="No"/>
+					</buttons>
+				</RadioButtonGroup>
+				<Label text="{i18n>Location}"/>
+				<ui:Richtexteditor />
+				<Label text="PPE Required" required="true"/>
+				<RadioButtonGroup columns="2" selectedIndex="2">
+					<buttons>
+						<RadioButton text="Yes" selected="true"/>
+						<RadioButton text="No"/>
+					</buttons>
+				</RadioButtonGroup>
+				<Label text="Special Instruction"/>
+				<ui:Richtexteditor />
+				<core:Title/>
+				<Label text="Proposed Date" labelFor="DTI6623"/>
+				<DateTimeInput type="Date" placeholder="DD/MM/YYYY" class="sapUiSmallMarginBottom" width="100%"/>
+				<Label text="{i18n>Time}"/>
+				<TimePicker value="{path: '{oEditSolReq>/}', constraints: { displayFormat: 'Time' } }" displayFormat="HH:mm:ss" change="onJobTimeChang"/>
+			</f:content>
+		</f:SimpleForm>
+		<f:SimpleForm editable="true" layout="ResponsiveGridLayout" title="The Solicitation is for" labelSpanXL="4" labelSpanL="4" labelSpanM="4"
+			labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="3" columnsL="2" columnsM="2"
+			singleContainerFullSize="false">
+			<f:content >
+				<core:Title/>
+				<CheckBox text="Engineering services"/>
+				<CheckBox text="IT/OT (Software or Network Connected)"/>
+				<core:Title/>
+				<CheckBox text="Materials"/>
+				<CheckBox text="Construction Services"/>
+				<core:Title/>
+				<CheckBox text="Professional services"/>
+				<CheckBox text="Others(define below)"/>
+				<Input/>
+			</f:content>
+		</f:SimpleForm>
+		<f:SimpleForm editable="true" title="5" layout="ResponsiveGridLayout" labelSpanXL="6" labelSpanL="4" labelSpanM="12" labelSpanS="12"
+			adjustLabelSpan="true" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="2"
+			singleContainerFullSize="false">
+			<!--title="5 Will a Contractor's License be required for this work"-->
+			<f:content >
+				<core:Title/>
+				<Label text="Will a Contractor's License be required for this work"/>
+				<RadioButtonGroup columns="2" selectedIndex="2">
+					<buttons>
+						<RadioButton text="Yes" selected="true"/>
+						<RadioButton text="No"/>
+					</buttons>
+				</RadioButtonGroup>
+				<Label text="Type A"/>
+				<CheckBox/>
+				<Label text="B"/>
+				<CheckBox/>
+				<Label text="C"/>
+				<CheckBox/>
+				<Label text="C61"/>
+				<CheckBox/>
+				<Label text="Others"/>
+				<Input/>
+			</f:content>
+		</f:SimpleForm>
+		<f:SimpleForm editable="true" layout="ResponsiveGridLayout" title="6" labelSpanXL="6" labelSpanL="4" labelSpanM="12" labelSpanS="12"
+			adjustLabelSpan="true" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="2"
+			singleContainerFullSize="false">
+			<f:content >
+				<Label text="Will payment of Prevailing Wages be Required" required="true"/>
+				<RadioButtonGroup columns="2" selectedIndex="2">
+					<buttons>
+						<RadioButton text="No" selected="true"/>
+						<RadioButton text="Yes"/>
+					</buttons>
+				</RadioButtonGroup>
+			</f:content>
+		</f:SimpleForm>
+		<f:SimpleForm editable="true" layout="ResponsiveGridLayout" title="7" labelSpanXL="6" labelSpanL="4" labelSpanM="12" labelSpanS="12"
+			adjustLabelSpan="true" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="2"
+			singleContainerFullSize="false">
+			<f:content>
+				<Label text="Do you require a 'Bid Bond' for this Solicitation?" required="true"/>
+				<RadioButtonGroup columns="2" selectedIndex="2">
+					<buttons>
+						<RadioButton text="No" selected="true"/>
+						<RadioButton text="Yes"/>
+					</buttons>
+				</RadioButtonGroup>
+			</f:content>
+		</f:SimpleForm>
+		<f:SimpleForm editable="true" layout="ResponsiveGridLayout" title="8" labelSpanXL="6" labelSpanL="4" labelSpanM="12" labelSpanS="12"
+			adjustLabelSpan="true" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="2"
+			singleContainerFullSize="false">
+			<f:content>
+				<Label text="How many copies of the responses are required?"/>
+				<Input/>
+			</f:content>
+		</f:SimpleForm>
+		<f:SimpleForm editable="true" layout="ResponsiveGridLayout" title="9" labelSpanXL="6" labelSpanL="4" labelSpanM="12" labelSpanS="12"
+			adjustLabelSpan="true" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="2"
+			singleContainerFullSize="false">
+			<f:content>
+				<Label text="What is the project estimate?"/>
+				<Input value="{oEditSolReq>/ProjectEstimate}"/>
+			</f:content>
+		</f:SimpleForm>
+		<f:SimpleForm editable="true" layout="ResponsiveGridLayout" title="10" labelSpanXL="6" labelSpanL="4" labelSpanM="12" labelSpanS="12"
+			adjustLabelSpan="true" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="2"
+			singleContainerFullSize="false">
+			<f:content>
+				<Label text="Has this project and budget been approved?"/>
+				<CheckBox text="Yes"/>
+				<CheckBox text="No"/>
+				<Label text="(Clarify)"/>
+				<Input/>
+			</f:content>
+		</f:SimpleForm>
+		<f:SimpleForm editable="true" layout="ResponsiveGridLayout" title="11" labelSpanXL="6" labelSpanL="4" labelSpanM="12" labelSpanS="12"
+			adjustLabelSpan="true" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="2"
+			singleContainerFullSize="false">
+			<f:content>
+				<Label text="Funding Source / Other Federal Requirements"/>
+				<CheckBox text="Federal Funding"/>
+				<Label text=""/>
+				<CheckBox text="State of CA Funding"/>
+				<Label text=""/>
+				<CheckBox text="IID Revenues"/>
+				<Label text=""/>
+				<CheckBox text="Other Funding Sources"/>
+				<Label text=""/>
+				<!--<Text text="Identify the program, contract or other funding source:"/>-->
+				<!--<Text text="Also, please attach any documentation pursuit to which the Federal or State funds were obtained"/>-->
+				<Input/>
+			</f:content>
+		</f:SimpleForm>
+		<f:SimpleForm editable="true" layout="ResponsiveGridLayout" title="12 Regulatory/Compliance" labelSpanXL="4" labelSpanL="4" labelSpanM="12"
+			labelSpanS="12" adjustLabelSpan="true" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="2"
+			singleContainerFullSize="false">
+			<f:content >
+				<core:Title/>
+				<Label text="Subject to NERC-CIP-013 Standard"/>
+				<CheckBox/>
+				<Text text='Certification#'/>
+				<Input/>
+				<CheckBox text='No'/>
+				<core:Title/>
+				<Label text="Executive Order"/>
+				<CheckBox/>
+				<Text text='Executive Order#'/>
+				<Input/>
+				<CheckBox text='No'/>
+				<core:Title/>
+				<Label text="Senate Bill"/>
+				<CheckBox/>
+				<Text text='Senate Bill#'/>
+				<Input/>
+				<CheckBox text='No'/>
+				<core:Title/>
+				<Label text="If materials are involved: Is this purchase subjected to 'Buy America Act'? "/>
+				<CheckBox text='Yes'/>
+				<CheckBox text='No'/>
+			</f:content>
+		</f:SimpleForm>
+		<f:SimpleForm editable="true" layout="ResponsiveGridLayout" title="13" labelSpanXL="8" labelSpanL="4" labelSpanM="12" labelSpanS="12"
+			adjustLabelSpan="true" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="2"
+			singleContainerFullSize="false">
+			<f:content >
+				<Label text="Does this Solicitation have any other special requirements? Please clarify"/>
+				<Input/>
+			</f:content>
+		</f:SimpleForm>
+		<f:SimpleForm editable="true" layout="ResponsiveGridLayout" title="14. Please direct all questions and concerns to the following employees"
+			labelSpanXL="4" labelSpanL="4" labelSpanM="12" labelSpanS="12" adjustLabelSpan="true" emptySpanXL="0" emptySpanL="0" emptySpanM="0"
+			emptySpanS="0" columnsXL="2" columnsL="2" columnsM="2" singleContainerFullSize="false">
+			<f:content>
+				<core:Title/>
+				<Label text="Owner"/>
+				<Input/>
+				<Label text="Email"/>
+				<Input editable="false"/>
+				<Label text="Project Manager"/>
+				<Input/>
+				<Label text="Email"/>
+				<Input editable="false"/>
+				<Label text="Technical"/>
+				<Input/>
+				<Label text="Email"/>
+				<Input editable="false"/>
+				<Label text="Other"/>
+				<Input/>
+				<Label text="Email"/>
+				<Input editable="false"/>
+				<core:Title/>
+				<Label text="cell:"/>
+				<Input editable="false"/>
+				<Label text="Tel"/>
+				<Input editable="false"/>
+				<Label text="cell"/>
+				<Input editable="false"/>
+				<Label text="Tel"/>
+				<Input editable="false"/>
+				<Label text="cell"/>
+				<Input editable="false"/>
+				<Label text="Tel"/>
+				<Input editable="false"/>
+				<Label text="cell"/>
+				<Input editable="false"/>
+				<Label text="Tel"/>
+				<Input editable="false"/>
+			</f:content>
+		</f:SimpleForm>
+		<f:SimpleForm editable="true" layout="ResponsiveGridLayout" title="15 Approval Overview" labelSpanXL="4" labelSpanL="4" labelSpanM="12"
+			labelSpanS="12" adjustLabelSpan="true" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="2"
+			singleContainerFullSize="true">
+			<f:content>
+				<Table items="{}">
+					<headerToolbar>
+						<OverflowToolbar design="Transparent" height="3rem">
+							<Title text=""/>
+							<ToolbarSpacer/>
+							<Button icon="sap-icon://add" text="Add Approver"/>
+							<Button icon="sap-icon://delete" text="Remove Approver"/>
+						</OverflowToolbar>
+					</headerToolbar>
+					<columns>
+						<Column><Text text="Approver Title"/></Column>
+						<Column><Text text="Approver"/></Column>
+						<Column><Text text="Date received"/></Column>
+						<Column><Text text="Date Approved"/></Column>
+						<Column><Text text="Comments"/></Column>
+						<Column><Text text="Status"/></Column>
+					</columns>
+					<items>
+						<ColumnListItem></ColumnListItem>
+					</items>
+				</Table>
+			</f:content>
+		</f:SimpleForm>
+		<f:SimpleForm editable="true" layout="ResponsiveGridLayout" title="16 Attachments" labelSpanXL="4" labelSpanL="4" labelSpanM="12"
+			labelSpanS="12" adjustLabelSpan="true" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="2"
+			singleContainerFullSize="true">
+			<f:content>
+				<!--<upload:UploadSet id="editUploadSet" instantUpload="true" showIcons="true" uploadEnabled="true" terminationEnabled="true"-->
+				<!--	fileTypes="txt,doc,png" maxFileNameLength="30" maxFileSize="200" mediaTypes="text/plain,application/msword,image/jpeg"-->
+				<!--	uploadUrl="../../../../upload" items="{path: '/items', templateShareable: false}">-->
+				<!--	<upload:items>-->
+				<!--		<upload:UploadSetItem fileName="{fileName}" mediaType="{mediaType}" url="{url}" thumbnailUrl="{thumbnailUrl}"-->
+				<!--			attributes="{path: 'attributes', templateShareable: false}" markers="{path: 'markers', templateShareable: false}"-->
+				<!--			statuses="{path: 'statuses', templateShareable: false}" uploadState="{uploadState}">-->
+				<!--			<upload:attributes>-->
+				<!--				<ObjectAttribute title="{title}" text="{text}" active="{active}"/>-->
+				<!--			</upload:attributes>-->
+				<!--			<upload:markers>-->
+				<!--				<ObjectMarker type="{type}" visibility="{visibility}"/>-->
+				<!--			</upload:markers>-->
+				<!--			<upload:statuses>-->
+				<!--				<ObjectStatus title="{title}" text="{text}" state="{state}" icon="{icon}" active="{active}"/>-->
+				<!--			</upload:statuses>-->
+				<!--		</upload:UploadSetItem>-->
+				<!--	</upload:items>-->
+				<!--</upload:UploadSet>-->
+			</f:content>
+		</f:SimpleForm>
+	</VBox>
+</core:FragmentDefinition>

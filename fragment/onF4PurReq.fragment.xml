@@ -1,0 +1,40 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout" xmlns="sap.m"
+	xmlns:fb="sap.ui.comp.filterbar">
+	<TableSelectDialog id="idPurReqVH" noDataText="No Data" title="Purchase Requisition" search="onSearchPurReq" confirm="onPurReqVHConfirm"
+		cancel="onPurReqVHConfirm" showClearButton="true" items="{ path : '/PurReqSet', sorter : { path : 'Banfn', descending : false }}"
+		contentWidth="30%">
+		<columns>
+			<Column minScreenWidth="Tablet" demandPopin="true">
+				<Text text="Purchase Requisition"/>
+			</Column>
+			<Column minScreenWidth="Tablet" demandPopin="true">
+				<Text text="Item Number"/>
+			</Column>
+			<Column minScreenWidth="Tablet" demandPopin="true">
+				<Text text="Quantity"/>
+			</Column>
+			<Column minScreenWidth="Tablet" demandPopin="true" visible="false">
+				<Text text="Account Assignment"/>
+			</Column>
+			<Column minScreenWidth="Tablet" demandPopin="true" visible="false">
+				<Text text="GL"/>
+			</Column>
+			<Column minScreenWidth="Tablet" demandPopin="true" visible="false">
+				<Text text="Desc"/>
+			</Column>
+			<Column minScreenWidth="Tablet" demandPopin="true" visible="false">
+				<Text text="Value"/>
+			</Column>
+			
+		</columns>
+		<ColumnListItem>
+			<Text text="{Banfn}"/>
+			<Text text="{Bnfpo}"/>
+			<Text text="{Menge}"/>
+			<Text text="{Knttp}"/>
+			<Text text="{Sakto}"/>
+			<Text text="{Txz01}"/>
+			<Text text="{Preis}"/>
+		</ColumnListItem>
+	</TableSelectDialog>
+</core:FragmentDefinition>

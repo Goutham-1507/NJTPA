@@ -1,0 +1,34 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout" xmlns="sap.m"
+	xmlns:fb="sap.ui.comp.filterbar">
+	<TableSelectDialog id="idReqVH" noDataText="No Data" title="Requestor" search="onSearchReq" confirm="onReqVHConfirm" cancel="onReqVHConfirm"
+		showClearButton="true" items="{ path : '/UserSet', sorter : { path : 'Bname', descending : false }}" contentWidth="30%">
+		<columns>
+			<Column minScreenWidth="Tablet" demandPopin="true">
+				<Text text="Name"/>
+			</Column>
+			<Column minScreenWidth="Tablet" demandPopin="true">
+				<Text text="First Name"/>
+			</Column>
+			<Column minScreenWidth="Tablet" demandPopin="true">
+				<Text text="Last Name"/>
+			</Column>
+			<Column minScreenWidth="Tablet" demandPopin="true" visible="false">
+				<Text text="Email"/>
+			</Column>
+			<!--<Column minScreenWidth="Tablet" demandPopin="true">-->
+			<!--	<Text text="Cell"/>-->
+			<!--</Column>-->
+			<Column minScreenWidth="Tablet" demandPopin="true" visible="false">
+				<Text text="Telephone"/>
+			</Column>
+		</columns>
+		<ColumnListItem>
+			<Text text="{Bname}"/>
+			<Text text="{NameFirst}"/>
+			<Text text="{NameLast}"/>
+			<Text text="{SmtpAddr}"/>
+			<!--<Text text="{Cell}"/>-->
+			<Text text="{TelNumber}"/>
+		</ColumnListItem>
+	</TableSelectDialog>
+</core:FragmentDefinition>

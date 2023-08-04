@@ -1,0 +1,36 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout">
+	<!--<P13nDialog ok="onSave" cancel="onWindowCancel" initialVisiblePanelType="dimeasure">-->
+	<!--	<panels>-->
+	<!--		<Panel>-->
+	<!--			<Text text="{}"></Text>-->
+	<!--		</Panel>-->
+	<!--	</panels>-->
+	<!--</P13nDialog>-->
+	<Dialog title="" state="Warning">
+		<content>
+			<Panel>
+				<core:Icon icon="sap-icon://alert" visible="true"></core:Icon>
+				<!--<Button icon= "sap-icon://alert"/>-->
+				<Text text="{i18n>ConfirmSave}"/>
+			</Panel>
+			<HBox>
+			<Panel class="ObjectLayout">
+				<Button icon="sap-icon://accept" text="{i18n>Confirm}" enabled="{=${oCrtSolReq>/IsEdit}===true?true:false}" type="Emphasized"
+					press=".onSave" tooltip="{i18n>SAVE}">
+					<layoutData>
+						<l:GridData span="XL3 L3 M3 S3"/>
+					</layoutData>
+				</Button>
+			</Panel>
+			<Panel>
+				<Button icon="sap-icon://cancel" text="{i18n>CANCEL}" enabled="{=${oCrtSolReq>/IsEdit}===true?true:false}" type="Emphasized"
+					press=".onCancelsave" tooltip="{i18n>ORDER}">
+					<layoutData>
+						<l:GridData span="XL3 L3 M3 S3"/>
+					</layoutData>
+				</Button>
+			</Panel>
+			</HBox>
+		</content>
+	</Dialog>
+</core:FragmentDefinition>

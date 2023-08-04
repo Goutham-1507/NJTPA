@@ -1,0 +1,357 @@
+/* Enter your custom styles here */
+
+.democlass:before {
+    color: RED;
+}
+
+
+/*.sapMLabel {
+    padding-top: 10px;
+    text-align: end;
+    white-space: pre-wrap;
+}*/
+
+
+/* logo css begin*/
+
+.jdocImage.sapMBtn:hover>.sapMBtnHoverable {
+    background-image: none;
+    background-color: #fff !important;
+}
+
+.jdocImage .sapMBtnInner {
+    border: none !important;
+    outline: none !important;
+}
+
+html.sap-desktop .jdocImage .sapMBtn:focus>.sapMFocusable {
+    outline: none !important;
+    outline-offset: -3px;
+}
+
+
+/*.jdocImage .sapMBtnIcon {*/
+
+
+/*    padding-top: .5rem !important;*/
+
+
+/*}*/
+
+.jdocImageHeader .sapMBarLeft .sapMBtnCustomIcon {
+    visibility: visible !important;
+}
+
+.jdocImageHeader .sapMBar .sapMBarRight {
+    visibility: hidden !important;
+}
+
+
+/*logo css end*/
+
+.TextFontColour {
+    font-weight: bold;
+    color: #AB1E2C;
+    padding-left: 3rem;
+}
+
+.myDetailedViewBar {
+    height: 9rem !important;
+    background-color: white !important;
+}
+
+.myCheckBoxClass {
+    margin-left: -0.8rem !important;
+    margin-top: -0.3rem !important;
+}
+
+.myDocumentIconButton .sapMBtnIcon {
+    font-size: 7.375rem;
+    line-height: 2.375rem;
+    width: 5.375rem;
+    text-align: center;
+    margin: 0px;
+    margin-top: 53%;
+    padding: 0;
+    vertical-align: top;
+    max-height: 2.375rem;
+}
+
+.myDetailedPageGridClass {
+    margin-left: -17% !important;
+}
+
+.myDetailedPageGridClass.sapUiRespGridVSpace1>div {
+    margin-bottom: -1rem !important;
+}
+
+.sapMInputBaseInner,
+.sapMInputBasePlaceholder {
+    width: 100%;
+    height: 100%;
+}
+
+.sapUiRespGrid.sapUiRespGridVSpace1>div {
+    margin-bottom: 0rem;
+}
+
+.sapUiSmallMarginTop {
+    margin-top: 0.8rem !important;
+}
+
+.myTitleDescButtonClass .sapMBtnInner {
+    height: 82%;
+    width: 82%;
+    margin-bottom: 1rem;
+    min-width: 2rem;
+    min-height: 2rem;
+}
+
+.myTitleDescButtonClass .sapMBtnIcon {
+    font-size: 1rem;
+    line-height: 2rem;
+    width: 2rem;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    vertical-align: top;
+    max-height: 2rem;
+}
+
+.sapMSlt>.sapMSltLabel {
+    position: absolute;
+    width: 100%;
+    left: 0px;
+    top: 0px;
+    right: 0;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-decoration: none;
+    text-indent: 0px;
+    text-align: start;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+.sapMMultiInputBorder {
+    box-sizing: border-box;
+    position: relative;
+    white-space: nowrap;
+    border-radius: 0;
+    background: #ffffff;
+    border: 1px solid #bfbfbf;
+    height: 2rem;
+    padding-left: 0.75rem;
+    display: flex;
+    flex-direction: row;
+}
+
+.sapMSlt {
+    height: 2rem;
+    margin: 0.25rem 0 0.6rem 0;
+    border: 1px solid #bfbfbf;
+    background: #ffffff;
+}
+
+.sapMInputValHelpInner,
+html[data-sap-ui-browser='ie9'] .sapMInputValHelpInner {
+    height: 2rem;
+    width: 2rem;
+    line-height: 2rem;
+    margin-left: 0.4rem;
+}
+
+.sapMSltArrow {
+    position: absolute;
+    text-align: center;
+    width: 2rem;
+    line-height: 2rem;
+    top: 0;
+    right: 0;
+    background: #ffffff;
+    color: #666666;
+}
+
+.roundButtonForTextDescription .sapMBtnInner {
+    border-radius: 4px !important;
+}
+
+.sapMMultiInput .sapMInputBaseInner {
+    border: 0;
+    padding-left: 0;
+    padding-right: 0.125rem;
+    height: 2.375rem;
+    position: absolute;
+    left: 0;
+    top: -3px;
+    background: transparent;
+}
+
+.myPopoverClass .sapMSLITitleOnly {
+    font-size: 0.875rem !important;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: normal;
+}
+
+.headerDialogIcon {
+    margin-left: 5% !important;
+    margin-top: 3% !important;
+}
+
+.roundButtonBorders .sapMBtnInner {
+    border-radius: 8px !important;
+}
+
+.wrapClass {
+    white-space: normal!important;
+    overflow: hidden!important;
+}
+
+.spaceRemoval {
+    white-space: normal;
+    overflow: visible;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.sapMLabel {
+    color: #666666;
+    font-size: 0.875rem;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    display: inline-block;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    cursor: text;
+    /*margin-top: 9% !important;*/
+}
+
+.myVBoxClass {
+    margin-left: -2% !important;
+}
+
+.sapMUCNoDataPage .sapUiIcon {
+    color: rgba(102, 102, 102, 0.5);
+    font-size: 2rem !important;
+}
+
+.sapMUCNoDataPage .sapMUCNoDataText {
+    padding: 1rem 0rem;
+    line-height: 2rem;
+    font-size: 1.2rem;
+    color: #333333;
+    margin-top: -1rem;
+}
+
+.sapMUCNoDataPage .sapMUCNoDataDescription {
+    padding: 0rem 0rem 2rem 0rem;
+    font-size: 0.8rem;
+    margin-top: -1rem;
+    margin-bottom: -2rem;
+    color: #666666;
+}
+
+.myPopoverClass {
+    margin-left: 34% !important;
+    top: 15% !important;
+}
+
+.myDialogConfirmationText {
+    text-align: center !important;
+    width: 100%;
+    margin-top: 2.3% !important;
+    margin-bottom: 2.5% !important;
+    font-weight: 100;
+}
+
+.myDialogInfoButton {
+    margin-right: 82% !important;
+}
+
+.myCheckBoxPadding {
+    margin-left: -3.6% !important;
+}
+
+.myLinksButtonClass {
+    margin-left: 93.2%;
+}
+
+.myLinksButtonClass .sapMBtnIcon {
+    font-size: 1.375rem;
+    line-height: 2.375rem;
+    width: 2.375rem;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    vertical-align: top;
+    max-height: 2.375rem;
+}
+
+.myLinksButtonClass .sapMBtnInner {
+    height: 2.625rem;
+    background-image: none;
+    background: transparent;
+    border-color: transparent;
+}
+
+.ObjectLayout {
+    width: 100%;
+    height: 100%!important;
+}
+
+.myDialogInfoButton {
+    margin-right: 82% !important;
+}
+
+.paddingLabel {
+    padding-top: 40px;
+    text-align: end;
+    white-space: pre-wrap;
+}
+
+.paddingLabels {
+    padding-top: 16px;
+}
+
+.paddingVBox {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.roundButtonBorders .sapMBtnInner {
+    border-radius: 8px !important;
+}
+
+.myTextAreaForDocumentDesc .sapMTextAreaInner {
+    margin-top: 5%;
+    margin-left: 5%;
+    width: 90%;
+}
+
+.sapUiCalItemNow> .sapUiCalItemText,
+.sapUiCalItemSel,
+.sapUiCalItemNow.sapUiCalItemSel>.sapUiCalItemText,
+html.sap-desktop .sapUiCalItem:focus,
+html.sap-desktop .sapUiCalItem:hover {
+    border: none !important;
+    background-color: #f2f2f2 !important;
+    outline: none !important;
+}
+
+.sapUiSizeCompact .sapUiFormContainerTitle>.sapUiFormTitle {
+    /*height: 2px;*/
+    line-height: 2rem;
+    font-weight: bold;
+    text-decoration: underline;
+}
+.red {
+	color : red;
+}
+.underline {
+    text-decoration: underline;
+    /*text-decoration-style: solid;*/
+    /*text-decoration-thickness: 30;*/
+    /*font-style: arial;*/
+}

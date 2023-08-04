@@ -1,0 +1,21 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout" xmlns:u="sap.ui.unified" xmlns="sap.m"
+	xmlns:f="sap.ui.layout.form">
+	<Dialog id="idDialogAddApprover" title="Add Approver" draggable="true" resizable="true" beforeOpen="onBeforeOpenAddApprover"
+		beforeClose="onBeforeCloseAddApprover"
+		class="sapUiResponsivePadding--content sapUiResponsivePadding--header sapUiResponsivePadding--footer sapUiResponsivePadding--subHeader">
+		<content class="sapUiResponsivePadding">
+			<Text text="Approver Name"/>
+			<Input id="idApprName" value="{oAddApprovers>/ApproverName}"  valueHelpOnly = "true" showValueHelp="true" showSuggestion="true" valueHelpRequest="handleF4Requestorfragment" suggestionItems="{oJModel>/Approvers}">
+				<suggestionItems>
+					<core:Item id="sugItm" text="{oJModel>Bname}"/>
+				</suggestionItems>
+			</Input>
+		</content>
+		<beginButton id="idBeginButtonSaveEdit">
+			<Button id="idButtonSaveTaxCodeEdit" text="Save" press="onAddApproverSave"/>
+		</beginButton>
+		<endButton id="idEndButtonCancelEdit">
+			<Button id="idButtonCancelEdit" text="Cancel" press="onCloseAddApprover"/>
+		</endButton>
+	</Dialog>
+</core:FragmentDefinition>

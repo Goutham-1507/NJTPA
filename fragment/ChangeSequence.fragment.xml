@@ -1,0 +1,56 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout">
+	<Dialog draggable="true" contentHeight="400px" contentWidth="450px" afterClose="cancelAddLocation" title="Change Sequence">
+		<customHeader>
+			<Bar class="headerBackgroundDialog">
+				<contentMiddle>
+					<Title text="Change Sequence"></Title>
+				</contentMiddle>
+			</Bar>
+		</customHeader>
+		<Page showHeader="false">
+			<content>
+				<l:Grid class="sapUiSizeCompact">
+					<Text text="">
+						<layoutData>
+							<l:GridData span="L1 M2 S12"/>
+						</layoutData>
+					</Text>
+				</l:Grid>
+				<Table inset="false" class="sapUiSizeCompact" id="changeSequenceTable" items="{path: 'oJModel>/Approvers'}">
+					<columns>
+						<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Left" width="3em">
+							<Text text="Up"/>
+						</Column>
+						<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Left" width="3em">
+							<Text text="Down"/>
+						</Column>
+						<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Left" width="10em">
+							<Text text="Title"/>
+						</Column>
+						<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Left" width="30em">
+							<Text text="Approver"/>
+						</Column>
+					</columns>
+					<items>
+						<ColumnListItem>
+							<cells>
+								<Button icon="sap-icon://collapse-group" press="moveUpSequence"/>
+								<Button icon="sap-icon://expand-group" press="moveDownSequence"/>
+								<Text text="{oJModel>Title}"/>
+								<Text text="{oJModel>Mulappr}"/>
+							</cells>
+						</ColumnListItem>
+					</items>
+				</Table>
+			</content>
+			<footer>
+				<OverflowToolbar>
+					<Button id="popoverBtnApprover" icon="sap-icon://message-popup" text="{/messagesLength}" press="handleMessagePopoverPressApprover"/>
+					<ToolbarSpacer></ToolbarSpacer>
+					<Button text="Save" type="Accept" press="changeSequenceSubmit"/>
+					<Button text="Cancel" type="Reject" press="closeChangeSequence"/>
+				</OverflowToolbar>
+			</footer>
+		</Page>
+	</Dialog>
+</core:FragmentDefinition>
